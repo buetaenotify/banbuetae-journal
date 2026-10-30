@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ระบบสร้างวารสารอัตโนมัติ</title>
+<meta name="theme-color" content="#2563eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="วารสาร บต.">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="author" content="นายอับดุลเลาะ มะลี">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  html, body { margin:0; height:100%; background:#083e96; font-family:system-ui, sans-serif; }
+  iframe { position:fixed; inset:0; width:100%; height:100%; border:0; background:#f4f1fb; }
+  .splash { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:#fff;
+    background:linear-gradient(160deg,#083e96,#6d28d9 60%,#db2777); transition:opacity .4s; z-index:2; text-align:center; padding:20px; }
+  .splash img { width:120px; height:120px; border-radius:28px; box-shadow:0 12px 30px rgba(0,0,0,.35); }
+  .splash h1 { font-size:22px; margin:0; } .splash p { margin:0; opacity:.85; font-size:14px; }
+  .splash a { color:#fff; background:rgba(255,255,255,.2); padding:10px 18px; border-radius:12px; text-decoration:none; display:none; }
+  .hide { opacity:0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="splash" id="splash">
+  <img src="icon-192.png" alt="">
+  <h1>ระบบสร้างวารสารอัตโนมัติ</h1>
+  <p>โรงเรียนบ้านบือแต · พัฒนาโดย นายอับดุลเลาะ มะลี</p>
+  <p id="st">กำลังเปิด…</p>
+  <a id="open" href="#" target="_top">เปิดระบบแบบเต็มหน้าจอ</a>
+</div>
+<iframe id="app" title="ระบบสร้างวารสารอัตโนมัติ" allow="clipboard-write"></iframe>
+<script>
+  // ⬇️ วางลิงก์เว็บแอป (ลงท้ายด้วย /exec) ที่นี่
+  var WEBAPP_URL = 'https://script.google.com/macros/s/ใส่รหัสเว็บแอปของคุณ/exec';
+
+  var f = document.getElementById('app'), sp = document.getElementById('splash'), op = document.getElementById('open');
+  op.href = WEBAPP_URL;
+  f.onload = function () { sp.classList.add('hide'); };
+  f.src = WEBAPP_URL;
+  // ถ้าโหลดในกรอบไม่ได้ (เช่น ต้องล็อกอินบัญชีโรงเรียน) ให้มีปุ่มเปิดแบบเต็ม
+  setTimeout(function () {
+    if (!sp.classList.contains('hide')) { document.getElementById('st').textContent = 'ใช้เวลานานกว่าปกติ'; op.style.display = 'inline-block'; }
+  }, 9000);
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
