@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว · ระบบสร้างวารสารอัตโนมัติ</title>
+<link rel="icon" href="favicon.png">
+<style>
+  :root { --p:#6d28d9; --text:#24203a; --muted:#6b6580; --bg:#f4f1fb; }
+  body { margin:0; font-family:'Sarabun','Noto Sans Thai',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.75; }
+  header { background:linear-gradient(120deg,#2563eb,#6d28d9 55%,#db2777); color:#fff; padding:28px 16px; text-align:center; }
+  header img { width:84px; height:84px; border-radius:22px; box-shadow:0 8px 20px rgba(0,0,0,.3); }
+  header h1 { margin:10px 0 4px; font-size:24px; }
+  header p { margin:0; opacity:.9; }
+  main { max-width:760px; margin:-16px auto 30px; background:#fff; border-radius:20px; padding:24px 22px; box-shadow:0 10px 30px -12px rgba(76,29,149,.3); }
+  h2 { color:var(--p); font-size:19px; margin:22px 0 6px; }
+  ul { padding-left:22px; margin:6px 0; }
+  .muted { color:var(--muted); font-size:14px; }
+  footer { text-align:center; color:var(--muted); font-size:14px; padding:0 16px 30px; }
+</style>
+</head>
+<body>
+<header>
+  <img src="icon-192.png" alt="">
+  <h1>นโยบายความเป็นส่วนตัว</h1>
+  <p>ระบบสร้างวารสารอัตโนมัติ · โรงเรียนบ้านบือแต</p>
+</header>
+<main>
+  <p class="muted">ปรับปรุงล่าสุด: 2 พฤศจิกายน 2569</p>
+
+  <h2>1. เกี่ยวกับระบบ</h2>
+  <p>"ระบบสร้างวารสารอัตโนมัติ" เป็นระบบภายในของโรงเรียนบ้านบือแต อำเภอกะพ้อ จังหวัดปัตตานี
+  สำนักงานเขตพื้นที่การศึกษาประถมศึกษาปัตตานี เขต 3 ใช้สำหรับจัดทำจดหมายข่าวประชาสัมพันธ์ของโรงเรียน
+  บันทึกลง Google Drive ของโรงเรียน และเผยแพร่ลงเพจ Facebook ของโรงเรียนเท่านั้น</p>
+
+  <h2>2. ข้อมูลที่ระบบใช้</h2>
+  <ul>
+    <li>ข้อมูลข่าวที่ครูกรอก ได้แก่ หัวข้อ วันที่ รายละเอียดกิจกรรม และรูปภาพกิจกรรมของโรงเรียน</li>
+    <li>ชื่อครูผู้จัดทำและผู้อนุมัติ เพื่อบันทึกประวัติการจัดทำวารสาร</li>
+    <li>รหัสเข้าถึงเพจ (Page Access Token) ของเพจโรงเรียน เพื่อโพสต์ข่าวลงเพจ จัดเก็บไว้ในระบบของโรงเรียนเท่านั้น</li>
+  </ul>
+  <p>ระบบ <b>ไม่</b> เก็บข้อมูลส่วนตัวของผู้ใช้ Facebook ไม่อ่านข้อความ ความคิดเห็น หรือรายชื่อผู้ติดตามเพจ
+  และไม่ใช้ข้อมูลเพื่อการโฆษณา</p>
+
+  <h2>3. การนำข้อมูลไปใช้</h2>
+  <ul>
+    <li>สร้างภาพจดหมายข่าว และเก็บไว้ใน Google Drive ของโรงเรียน</li>
+    <li>เผยแพร่ภาพและข้อความลงเพจ Facebook ของโรงเรียน หลังจากผู้มีอำนาจอนุมัติแล้ว</li>
+    <li>ส่งข้อความและรูปกิจกรรมไปยัง Google Gemini เพื่อช่วยเรียบเรียงข่าวและตกแต่งภาพ</li>
+  </ul>
+
+  <h2>4. การเปิดเผยข้อมูล</h2>
+  <p>โรงเรียนไม่ขายหรือเปิดเผยข้อมูลให้บุคคลภายนอก นอกจากบริการที่ระบบใช้งาน ได้แก่ Google (Drive, Sheets, Gemini)
+  และ Meta (Facebook) ซึ่งอยู่ภายใต้นโยบายความเป็นส่วนตัวของผู้ให้บริการนั้น ๆ</p>
+
+  <h2>5. รูปภาพนักเรียนและบุคลากร</h2>
+  <p>รูปภาพที่เผยแพร่เป็นรูปกิจกรรมของโรงเรียน หากผู้ปกครองหรือบุคลากรต้องการให้ลบรูปใด
+  สามารถแจ้งโรงเรียนได้ตามช่องทางด้านล่าง โรงเรียนจะดำเนินการลบออกจากเพจและ Google Drive</p>
+
+  <h2>6. การขอลบข้อมูล</h2>
+  <p>ติดต่อขอลบข้อมูลหรือสอบถามได้ที่โรงเรียนบ้านบือแต ม.1 ต.ตะโละดือรามัน อ.กะพ้อ จ.ปัตตานี
+  หรือส่งข้อความทางเพจ <a href="https://www.facebook.com/banbuetae">facebook.com/banbuetae</a></p>
+</main>
+<footer>ระบบสร้างวารสารอัตโนมัติ · พัฒนาโดย นายอับดุลเลาะ มะลี</footer>
+</body>
+</html>
